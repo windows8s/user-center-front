@@ -15,6 +15,9 @@ import {RequestConfig} from "@alita/request";
 
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
+/**
+ * 无需用户登录态的页面
+ */
 const NO_NEED_LOGIN_WHITE_LIST = ['/user/register',loginPath];
 
 /**
@@ -26,7 +29,7 @@ export async function getInitialState(): Promise<{
   loading?: boolean;
   fetchUserInfo?: () => Promise<API.CurrentUser | undefined>;
 }> {
-
+  alert(process.env.NODE_ENV)
   const fetchUserInfo = async () => {
     try {
       const user = await queryCurrentUser({

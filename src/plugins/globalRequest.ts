@@ -14,12 +14,12 @@ import {stringify} from "querystring";
  */
 const request = extend({
   credentials: 'include', // 默认请求是否带上cookie
-  prefix: process.env.NODE_ENV === 'production' ? 'http://101.33.255.74:8080' : null
+  prefix: process.env.NODE_ENV === 'production' ? 'http://122.152.231.91' : undefined
   // requestType: 'form',
 });
 
 /**
- * 所以请求拦截器
+ * 所有请求拦截器
  */
 request.interceptors.request.use((url, options): any => {
   console.log("do request url = {}",url)
